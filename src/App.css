@@ -28,6 +28,78 @@
   transform: rotateY(8deg) scale(1.02);
   box-shadow: 0 12px 25px rgba(0, 123, 255, 0.3);
 }
+/* Card ရဲ့ အနားသတ်တွေကို လှပစေပြီး Shadow Effect ထည့်ခြင်း */
+.cert-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
 
+.cert-card:hover {
+  transform: translateY(-5px); /* Mouse တင်ရင် ကတ်လေး အပေါ်နည်းနည်းကြွလာမယ် */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
 
+/* ပုံကို ကတ်ထဲက လျှံမထွက်စေဘဲ Zoom ဆွဲခြင်း */
+.img-hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.cert-card:hover .img-hover-zoom {
+  transform: scale(1.08); /* Mouse တင်ရင် ပုံလေး ဝိုင်းပြီး ကြီးလာမယ် */
+  opacity: 0.9;
+}
+
+/* Tab ခလုတ်လေးတွေ ရွေးလိုက်တဲ့အခါ ပုံစံလှပစေရန် */
+.custom-nav-pills .nav-link {
+  color: #555;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+}
+
+.custom-nav-pills .nav-link.active {
+  background-color: #0d6efd !important; /* Bootstrap Primary Color */
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+}
+
+/* Social Link တွေကို Hover တင်ရင် ရွေ့သွားမည့် Effect */
+.transition-link {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  border-color: #e3e6ec;
+}
+
+.transition-link:hover {
+  transform: translateX(4px);
+  background-color: #f8f9fa;
+  border-color: #0d6efd;
+}
+/* Preview စာသားလေးအား မူလတွင် ဖျောက်ထားရန် */
+.preview-badge {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Card ကို Hover တင်လိုက်လျှင် Preview စာသားလေး သိသိသာသာ ပေါ်လာမည် */
+.cert-card:hover .preview-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ဓာတ်ပုံကို Hover တင်ရင် အနည်းငယ် မှောင်သွားစေပြီး စာသားကို လင်းစေရန် */
+.cert-card:hover .view-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
 
